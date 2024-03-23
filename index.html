@@ -10,9 +10,25 @@
 <body>
 	<div id="main">
 		<h1>Test document</h1>
+		<div id="click-count">Количество кликов: 0</div>
 		<img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png">
 		<p>Lorem</p>
 		<button id="buy">BUY</button>
 	</div>
+	<script>
+    let clickCount = 0;
+
+    // Функция для обновления счетчика кликов
+    function updateClickCount() {
+        const clickCountElement = document.getElementById('click-count');
+        clickCountElement.textContent = `Количество кликов: ${clickCount}`;
+    }
+
+    // Обработчик клика по кнопке "BUY"
+    document.getElementById('buy').addEventListener('click', () => {
+        clickCount++;
+        updateClickCount();
+    });
+</script>
 </body>
 </html>
